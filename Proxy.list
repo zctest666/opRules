@@ -2257,7 +2257,6 @@ DOMAIN-SUFFIX,google.vg
 DOMAIN-SUFFIX,google.vn
 DOMAIN-SUFFIX,google.vu
 DOMAIN-SUFFIX,google.ws
-DOMAIN-SUFFIX,googleapis.cn
 DOMAIN-SUFFIX,googleapis.com
 DOMAIN-SUFFIX,googleapps.com
 DOMAIN-SUFFIX,googlearth.com
@@ -6092,7 +6091,7 @@ DOMAIN-SUFFIX,gstatic.cn
 DOMAIN-SUFFIX,gvt2.com
 IP-CIDR,74.125.0.0/16,no-resolve
 IP-CIDR,173.194.0.0/16,no-resolve
-# GoogleCNProxyIP 谷歌中国服务 services.googleapis.cn
+# GoogleCNProxyIP 谷歌中国服务
 IP-CIDR,120.232.181.162/32,no-resolve
 IP-CIDR,120.241.147.226/32,no-resolve
 IP-CIDR,120.253.253.226/32,no-resolve
