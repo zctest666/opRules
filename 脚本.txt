@@ -7,3 +7,6 @@ https://greasyfork.org/zh-CN/scripts/381682-html5%E8%A7%86%E9%A2%91%E6%92%AD%E6%
 #网页限制解除
 https://greasyfork.org/zh-CN/scripts/14146-%E7%BD%91%E9%A1%B5%E9%99%90%E5%88%B6%E8%A7%A3%E9%99%A4
 
+#ty广告插件屏蔽
+https://sleazyfork.org/zh-CN/scripts/402522-%E8%A7%A3%E5%86%B3%E8%8D%89%E6%A6%B4%E7%A4%BE%E5%8C%BA-1024-%E6%8B%A6%E6%88%AA%E5%8E%BB%E5%B9%BF%E5%91%8A%E6%8F%92%E4%BB%B6%E7%9A%84%E9%97%AE%E9%A2%98
+
