@@ -22,5 +22,11 @@ DOMAIN-SUFFIX,stream1.freetv.fun
 DOMAIN-SUFFIX,blog.wfso.cn
 DOMAIN-SUFFIX,52pojie.cn
 DOMAIN-SUFFIX,df-nissanfc.com
-DOMAIN-SUFFIX,xdaforums.com
 DOMAIN-SUFFIX,sharepoint.com
+DOMAIN-SUFFIX,mobaibox.com
+IP-CIDR,183.207.0.0/16,no-resolve
+DOMAIN-SUFFIX,cctv.cn
+DOMAIN-SUFFIX,yangshipin.cn
+DOMAIN-SUFFIX,dnsany.com
+DOMAIN-SUFFIX,cmvideo.cn
+DOMAIN-SUFFIX,chinamobile.com
