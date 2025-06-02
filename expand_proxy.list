@@ -1,9 +1,6 @@
 # NAME: 补充拓展代理
-DOMAIN-SUFFIX,pterclub.com
-DOMAIN-SUFFIX,springsunday.net
-DOMAIN-SUFFIX,ourbits.club
-DOMAIN-SUFFIX,alibabacloud.com
 DOMAIN-SUFFIX,challenges.cloudflare.com
+DOMAIN-SUFFIX,alibabacloud.com
 DOMAIN-SUFFIX,hhd800.com
 DOMAIN-SUFFIX,danbao.sbs
 DOMAIN-SUFFIX,next.itellyou.cn
