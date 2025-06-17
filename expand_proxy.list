@@ -13,3 +13,10 @@ DOMAIN-SUFFIX,tvb.com
 DOMAIN-SUFFIX,livednow.com
 DOMAIN-SUFFIX,livednow.org
 DOMAIN-SUFFIX,wx.sb
+# Talkatone 可能需要走代理的规则
+DOMAIN-SUFFIX,tktn.at
+DOMAIN-SUFFIX,tktn.be
+# 语音留言地址，一般需要代理
+DOMAIN-SUFFIX,vm.talkatone.com
+# 贴图服务
+DOMAIN-SUFFIX,tenor.com
