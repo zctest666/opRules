@@ -1,93 +1,96 @@
 [custom]
 
-; 规则集定义
-
-; 谷歌商店
-ruleset=🚀auto-proxy,[]DOMAIN-SUFFIX,xn--ngstr-lra8j.com
-ruleset=🚀auto-proxy,[]DOMAIN-SUFFIX,services.googleapis.cn
-
-
-; 以下规则需要国内直连
-;; TPTV
-ruleset=DIRECT,[]DOMAIN-SUFFIX,mobaibox.com
-ruleset=DIRECT,[]IP-CIDR,183.207.0.0/16,no-resolve
-
-;; YSP
-ruleset=DIRECT,[]DOMAIN-SUFFIX,cctv.cn
-ruleset=DIRECT,[]DOMAIN-SUFFIX,yangshipin.cn
-
-;; ITV
-ruleset=DIRECT,[]DOMAIN-SUFFIX,dnsany.com
-ruleset=DIRECT,[]DOMAIN-SUFFIX,cmvideo.cn
-ruleset=DIRECT,[]DOMAIN-SUFFIX,chinamobile.com
-
-; 以下规则需要台湾线路
-;; Hamivideo
-ruleset=🚀tw-proxy,[]DOMAIN-SUFFIX,cdn.hinet.net
-
-; 以下规则需要海外线路
-;; 4GTV & Hamivideo
-ruleset=🚀auto-proxy,[]DOMAIN-SUFFIX,4gtv.tv
-ruleset=🚀auto-proxy,[]DOMAIN-SUFFIX,hinet.net
-ruleset=🚀auto-proxy,[]DOMAIN-SUFFIX,ofiii.com
-
-;; YouTube
-ruleset=🚀auto-proxy,[]DOMAIN-SUFFIX,googlevideo.com
-ruleset=🚀auto-proxy,[]DOMAIN-SUFFIX,youtube.com
-
-;; MytvSuper
-ruleset=🚀auto-proxy,[]DOMAIN-SUFFIX,mytvsuper.com
-ruleset=🚀auto-proxy,[]DOMAIN-SUFFIX,tvb.com
-
-; 以下规则可自行测试能否直连，不能直连的话设置为海外代理
-ruleset=🚀auto-proxy,[]DOMAIN-SUFFIX,livednow.com
-ruleset=🚀auto-proxy,[]DOMAIN-SUFFIX,livednow.org
-ruleset=🚀auto-proxy,[]DOMAIN-SUFFIX,wx.sb
-
-
 ; 规则
 
-ruleset=🚀auto-proxy,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleCNProxyIP.list
+;去广告
+;ruleset=REJECT,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list
+;ruleset=REJECT,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanProgramAD.list
+
+;补充拓展直连
+ruleset=DIRECT,https://raw.githubusercontent.com/zctest666/opRules/refs/heads/main/expand_direct.list
+;补充拓展代理
+ruleset=♻️ auto-proxy,https://raw.githubusercontent.com/zctest666/opRules/refs/heads/main/expand_proxy.list
+
+; ruleset=🇸🇬 sg-proxy,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/YouTube/YouTube.list
+; ruleset=🇸🇬 sg-proxy,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/YouTubeMusic/YouTubeMusic.list
+ruleset=🇯🇵 jp-proxy,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/TikTok/TikTok.list
+ruleset=🇸🇬 sg-proxy,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/OpenAI/OpenAI.list
+; ruleset=🇸🇬 sg-proxy,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Twitter/Twitter.list
+
+ruleset=♻️ auto-proxy,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Wikimedia/Wikimedia.list
+ruleset=♻️ auto-proxy,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Wikipedia/Wikipedia.list
+ruleset=♻️ auto-proxy,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GoogleFCM/GoogleFCM.list
+ruleset=♻️ auto-proxy,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GitHub/GitHub.list
+ruleset=♻️ auto-proxy,clash-classic:https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GitHub/GitHub.yaml
+ruleset=♻️ auto-proxy,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/YouTube.list
+ruleset=♻️ auto-proxy,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Google/Google.list
+ruleset=♻️ auto-proxy,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Bing.list
+ruleset=♻️ auto-proxy,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OneDrive/OneDrive.list
+ruleset=♻️ auto-proxy,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Microsoft.list
+ruleset=♻️ auto-proxy,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Apple.list
+ruleset=♻️ auto-proxy,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Telegram/Telegram.list
+ruleset=♻️ auto-proxy,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Speedtest/Speedtest.list
+ruleset=♻️ auto-proxy,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Netflix.list
+ruleset=♻️ auto-proxy,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleCNProxyIP.list
+ruleset=♻️ auto-proxy,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyMedia.list
+ruleset=♻️ auto-proxy,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyGFWlist.list
+
+
+ruleset=DIRECT,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/JingDong/JingDong.list
+ruleset=DIRECT,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Alibaba/Alibaba.list
+
 ruleset=DIRECT,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list
 ruleset=DIRECT,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/UnBan.list
-ruleset=DIRECT,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list
+ruleset=DIRECT,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Download.list
+ruleset=DIRECT,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/GoogleCN.list
+ruleset=DIRECT,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/SteamCN.list
+
 ruleset=DIRECT,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaMedia.list
-ruleset=REJECT,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list
-ruleset=REJECT,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanProgramAD.list
+ruleset=DIRECT,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaMedia/ChinaMedia.list
+ruleset=DIRECT,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list
 ruleset=DIRECT,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaCompanyIp.list
 ruleset=DIRECT,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaIp.list
-
+ruleset=DIRECT,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/China/China.list
 
 ruleset=DIRECT,[]GEOIP,CN,no-resolve
 ruleset=DIRECT,[]GEOSITE,CN
-ruleset=🚀auto-proxy,[]GEOSITE,geolocation-!cn
-ruleset=🚀auto-proxy,[]FINAL
+ruleset=♻️ auto-proxy,[]GEOSITE,geolocation-!cn
+ruleset=♻️ auto-proxy,[]FINAL
 
 
 ; 策略组定义
 
 
 ; 港、台、新、日、美,排除倍率
-custom_proxy_group=🚀auto-proxy`select`[]🚀hk-proxy`[]🚀tw-proxy`[]🚀sg-proxy`[]🚀jp-proxy`[]🚀us-proxy`[]🚀ot-proxy`[]DIRECT
+custom_proxy_group=♻️ auto-proxy`select`[]🇸🇬 sg-proxy`[]🇭🇰 hk-proxy`[]🇹🇼 tw-proxy`[]🇯🇵 jp-proxy`[]🇺🇲 us-proxy`[]🎮 game-proxy`[]🌐 ot-proxy`[]DIRECT
+
+; custom_proxy_group=🎮 game-proxy`url-test`.*(gm).*`http://www.gstatic.com/generate_204``180,2,10
+
+custom_proxy_group=🎮 game-proxy`fallback`.*(gm).*`http://www.gstatic.com/generate_204``180,2,10
 
 ; 自动
-;custom_proxy_group=🚀hk-proxy`url-test`(ali|香港|HK|Hong Kong|🇭🇰|HongKong)`http://www.gstatic.com/generate_204``180,5,100
+;custom_proxy_group=🚀 hk-proxy`url-test`(ali|香港|HK|Hong Kong|🇭🇰|HongKong)`http://www.gstatic.com/generate_204``180,5,100
 
 ;港、台、新、日、美
-custom_proxy_group=🚀hk-proxy`select`(ali|香港|HK|Hong Kong|🇭🇰|HongKong)
+custom_proxy_group=🇭🇰 hk-proxy`select`.*(香港|Hong Kong|HK|hk).*
 
-custom_proxy_group=🚀tw-proxy`select`(ali|台湾|TW|Tai Wan|TaiWan)
+custom_proxy_group=🇹🇼 tw-proxy`select`.*(台湾|Taiwan|TW|tw).*
 
-custom_proxy_group=🚀sg-proxy`select`(ali|新加坡|SG|🇸🇬|Singapore)
+custom_proxy_group=🇸🇬 sg-proxy`select`.*(新加坡|Singapore|SG|sg).*
 
-custom_proxy_group=🚀jp-proxy`select`(ali|日本|jp|🇯🇵|JP|Japan)
+custom_proxy_group=🇯🇵 jp-proxy`select`.*(日本|Japan|JP|jp).*
 
-custom_proxy_group=🚀us-proxy`select`(ali|美国|🇺🇲|US|United States|us)
+custom_proxy_group=🇺🇲 us-proxy`select`.*(美国|US|United States|us).*
 
 ; 排除港、台、新、日、美、倍率
-custom_proxy_group=🚀ot-proxy`select`(?=ali|.*)^((?!(香港|HK|Hong Kong|🇭🇰|HongKong|台湾|TW|Tai Wan|TaiWan|日本|jp|🇯🇵|JP|Japan|美国|🇺🇲|US|United States|us)).)*$
+; custom_proxy_group=🌐 ot-proxy`select`(ot|其他|其它)
+
+; custom_proxy_group=🌐 ot-proxy`select`(?!.*(香港|Hong Kong|HK|hk|台湾|Taiwan|TW|tw|新加坡|Singapore|SG|sg|日本|Japan|JP|jp|美国|US|United States|us)).*
+
+custom_proxy_group=🌐 ot-proxy`select`^(?!.*(gm|香港|Hong Kong|HK|hk|台湾|Taiwan|TW|tw|新加坡|Singapore|SG|sg|日本|Japan|JP|jp|美国|US|United States|us)).*$
 
 
 ;启用自定义规则集
+
 enable_rule_generator=true
 overwrite_original_rules=true
