@@ -2,7 +2,7 @@
 proxy-providers:
   freebp:
     url: ""
-    type: http
+    输入: http
     interval: 86400
     health-check:
       enable: true
