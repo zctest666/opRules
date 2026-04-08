@@ -1,0 +1,88 @@
+# 订阅
+proxy-providers:
+  freebp:
+    url: ""
+    type: http
+    interval: 86400
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
+    proxy: DIRECT
+
+# 全局配置 
+port: 7890
+socks-port: 7891
+allow-lan: true
+mode: Rule
+log-level: info
+external-controller: 127.0.0.1:9090
+
+# 策略组
+proxy-groups:
+  - {name: ChatGPT, type: select, proxies: [auto-proxy,gm-proxy,hk-proxy,tw-proxy,sg-proxy,jp-proxy,us-proxy,cfech-proxy,ot-proxy]}
+  - {name: TikTok, type: select, proxies: [auto-proxy,gm-proxy,hk-proxy,tw-proxy,sg-proxy,jp-proxy,us-proxy,cfech-proxy,ot-proxy]}
+  - {name: Cloudflare, type: select, proxies: [auto-proxy,gm-proxy,hk-proxy,tw-proxy,sg-proxy,jp-proxy,us-proxy,cfech-proxy,ot-proxy]}
+  - {name: Google, type: select, proxies: [auto-proxy,gm-proxy,hk-proxy,tw-proxy,sg-proxy,jp-proxy,us-proxy,cfech-proxy,ot-proxy]}
+  - {name: Microsoft, type: select, proxies: [auto-proxy,gm-proxy,hk-proxy,tw-proxy,sg-proxy,jp-proxy,us-proxy,cfech-proxy,ot-proxy]}
+  - {name: auto-proxy, type: select, proxies: [gm-proxy,hk-proxy,tw-proxy,sg-proxy,jp-proxy,us-proxy,cfech-proxy,ot-proxy]}
+  - {name: gm-proxy, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: ".*(-gm-).*"}
+  - {name: hk-proxy, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: ".*(香港|Hong Kong|HK|hk).*"}
+  - {name: tw-proxy, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: ".*(台湾|Taiwan|TW|tw).*"}
+  - {name: sg-proxy, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: ".*(新加坡|Singapore|SG|sg).*"}
+  - {name: jp-proxy, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: ".*(日本|Japan|JP|jp).*"}
+  - {name: us-proxy, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: ".*(美国|US|United States|us).*"}
+  - {name: cfech-proxy, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: ".*(cf-ech-).*"}
+  - {name: ot-proxy, type: select, include-all: true, filter: "^(?!.*(-gm-|香港|Hong Kong|HK|hk|台湾|Taiwan|TW|tw|新加坡|Singapore|SG|sg|日本|Japan|JP|jp|美国|US|United States|us|cf-ech-)).*$"}
+  
+# 规则匹配
+rules:
+  - RULE-SET,google@ads,REJECT
+  - RULE-SET,private,DIRECT
+  - RULE-SET,private,DIRECT,no-resolve
+  - RULE-SET,cn,DIRECT
+  - RULE-SET,cn,DIRECT,no-resolve
+  - RULE-SET,google-cn,DIRECT
+  - RULE-SET,category-games@cn,DIRECT
+  - RULE-SET,category-game-platforms-download,DIRECT
+  - RULE-SET,category-public-tracker,DIRECT
+  - RULE-SET,openai,ChatGPT
+  - RULE-SET,tiktok,TikTok
+  - RULE-SET,tiktok,TikTok,no-resolve
+  - RULE-SET,cloudflare,Cloudflare
+  - RULE-SET,cloudflare,Cloudflare,no-resolve
+  - RULE-SET,google,Google
+  - RULE-SET,google,Google,no-resolve
+  - RULE-SET,microsoft,Microsoft
+  - RULE-SET,microsoft,Microsoft,no-resolve
+  - RULE-SET,gfw,auto-proxy
+  - MATCH,auto-proxy
+
+# 规则集
+rule-anchor:
+  ip: &ip {type: http, interval: 86400, behavior: ipcidr, format: mrs}
+  domain: &domain {type: http, interval: 86400, behavior: domain, format: mrs}
+  class: &class {type: http, interval: 86400, behavior: classical, format: text}
+rule-providers: 
+  google@ads: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/google%40ads.mrs"}
+  private: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/private.mrs"}
+  cn: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/cn.mrs"}
+  google-cn: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/google%40ads.mrs"}
+  category-games@cn: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/google-cn.mrs"}
+  category-game-platforms-download: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/category-game-platforms-download.mrs"}
+  category-public-tracker: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/category-public-tracker.mrs"}
+  openai: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/openai.mrs"}
+  tiktok: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/tiktok.mrs"}
+  cloudflare: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/cloudflare.mrs"}
+  google: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/google.mrs"}
+  microsoft: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/microsoft.mrs"}
+  gfw: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/gfw.mrs"}
+  private: {<<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geoip/private.mrs"}
+  cn: { <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geoip/cn.mrs"}
+  tiktok: { <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geoip/tiktok.mrs"}
+  cloudflare: { <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geoip/cloudflare.mrs"}
+  google: { <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geoip/google.mrs"}
+  microsoft: {<<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geoip/microsoft.mrs"}
+
+
+
